@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const countdownContainer = document.getElementById('countdown');
     const counterElement = document.getElementById('counter');
-    const today = new Date();
+    const today = new Date();  // Dynamic current date
     const endDate = new Date('2027-12-31');
 
     const totalDays = Math.floor((endDate - today) / (1000 * 60 * 60 * 24));
@@ -23,10 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let startDate = new Date(`${year}-01-01`);
         const yearEndDate = new Date(`${year}-12-31`);
+        let dayOfYear = 1;
 
         while (startDate <= yearEndDate) {
             const dayDiv = document.createElement('div');
             dayDiv.classList.add('day');
+            dayDiv.textContent = dayOfYear; // Show day of the year
 
             if (startDate <= today) {
                 dayDiv.classList.add('past');
@@ -37,11 +39,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             daysGrid.appendChild(dayDiv);
             startDate.setDate(startDate.getDate() + 1);
+            dayOfYear++;
         }
 
         countdownContainer.appendChild(yearContainer);
     });
 
-    const remainingDays = totalDays - pastDays;
+    const remainingDays = totalDays > 0 ? totalDays : 0;
     counterElement.textContent = `Days left: ${remainingDays}`;
 });
