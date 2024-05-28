@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const countdownContainer = document.getElementById('countdown');
     const counterElement = document.getElementById('counter');
-    const today = new Date('2024-05-28');
+    const today = new Date();
     const endDate = new Date('2027-12-31');
 
     const totalDays = Math.floor((endDate - today) / (1000 * 60 * 60 * 24));
