@@ -39,8 +39,12 @@ h1 {
 .day {
     width: 20px;
     height: 20px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 1px;
+    font-size: 11px;
+    color: #fff;
 }
 
 .past {
@@ -50,4 +54,5 @@ h1 {
 .future {
     background-color: white;
     border: 1px solid #ccc;
+    color: black;
 }
