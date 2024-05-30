@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const resetTomatoButton = document.getElementById('reset-tomato');
     const hoursInput = document.getElementById('hours');
     const minutesInput = document.getElementById('minutes');
+    const alarmSound = document.getElementById('alarm-sound');
     const today = new Date();  // Dynamic current date
     const endDate = new Date('2027-12-31');
 
@@ -73,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (remainingTime <= 0) {
             clearInterval(tomatoInterval);
             tomatoDisplayElement.textContent = "Tomato counter finished!";
+            alarmSound.play();
             return;
         }
 

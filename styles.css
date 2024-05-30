@@ -69,7 +69,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
     gap: 5px;
-    max-width: 800px;
+    max-width: flex;
     margin: 0 auto;
 }
 
